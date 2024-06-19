@@ -1,0 +1,24 @@
+/* Estilo base para todos los tamaños de pantalla */
+.w-32 {
+    width: 8rem;
+    /* Ajuste general para todos los dispositivos */
+  }
+  
+  /* Estilos para pantallas grandes (mayores de 1279px de ancho) */
+  @media (min-width: 1024px) {
+    .w-32 {
+      /* Estilos específicos para pantallas grandes */
+      width: 12rem; /* Ejemplo de ajuste específico */
+      margin-top: 250px;
+    }
+  }
+  
+  /* Estilos para pantallas más pequeñas (menores de 1024px de ancho) */
+  @media (max-width: 1023px) {
+    .w-32 {
+      /* Ajuste general para pantallas pequeñas */
+      width: 8rem;
+      margin-top: 0; /* Por ejemplo, elimina el margen en pantallas pequeñas */
+    }
+  }
+  

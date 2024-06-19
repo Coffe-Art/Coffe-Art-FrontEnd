@@ -1,0 +1,19 @@
+.w-32 {
+    width: 8rem;
+    margin: 10px;
+}
+@media (min-width: 1024px) {
+   
+    .w-32 {
+        width: 8rem;
+        margin: 10px;
+    }
+  }
+  
+  @media (max-width: 1023px) {
+    
+    .w-32 {
+    width: 8rem;
+    margin: 10px;
+}
+  }

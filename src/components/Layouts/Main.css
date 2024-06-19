@@ -1,0 +1,21 @@
+/* Para hacer que el slider ocupe más espacio en dispositivos móviles */
+@media (max-width: 768px) {
+    .slick-slider {
+        width: 100%;
+    }
+}
+
+/* Para hacer que el texto se adapte mejor en dispositivos móviles */
+.text-center {
+    text-align: center;
+}
+
+/* Para mantener las imágenes laterales en su lugar */
+@media (max-width: 768px) {
+    .bg-darkpurple {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
