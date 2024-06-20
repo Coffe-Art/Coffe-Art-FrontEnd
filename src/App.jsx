@@ -6,6 +6,8 @@ import { Register } from './components/Register';
 import { SignIn } from './components/SignIn'; 
 import { Menu } from './components/Layouts/Menu';
 import { Profile } from './components/Layouts/Profile';
+import { Product } from './components/Layouts/Product';
+import { Help } from './components/Layouts/Help';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Product" element={<Product />} />
+        <Route path="/Help" element={<Help/>} />
       </Routes>
     </Router>
   );

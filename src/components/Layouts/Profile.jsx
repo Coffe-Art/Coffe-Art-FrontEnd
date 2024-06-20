@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom'; 
+import { NavLink , useNavigate} from 'react-router-dom'; 
 import Logo from '../../assets/Artesanías.png';
 import BackgroundImage from '../../assets/FondoMenu.png';
 import Background from '../../assets/Fondo.png';
@@ -12,28 +12,31 @@ export const Profile = () => {
   const [email, setEmail] = useState('usuario@example.com');
   const [phone, setPhone] = useState('123-456-7890');
 
+  const navigate = useNavigate(); 
+
   const handleLogoClick = (e) => {
     e.preventDefault();
+    navigate('/#'); 
   };
 
   const handleLoginClick = () => {
-  
+    navigate('/#'); 
   };
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-white">
       <div className="md:w-1/6 bg-cover bg-center p-4 text-white" style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="flex flex-col items-center">
-          <a href="/#" onClick={handleLogoClick} className="mb-6">
+        <a href="/#" onClick={handleLogoClick} className="mb-6">
             <img src={Logo} alt="Logo" className="h-32 w-32" />
           </a>
           <nav className="flex flex-col items-center space-y-6">
-            <NavLink to="/menu" className="text-2xl text-white hover:text-yellow-600 font-bold">Menú</NavLink>
-            <NavLink to="/profile" className="text-2xl text-white hover:text-yellow-600 font-bold">Perfil</NavLink>
-            <NavLink to="/producto" className="text-2xl text-white hover:text-yellow-600 font-bold">Producto</NavLink>
-            <NavLink to="/asistente" className="text-2xl text-white hover:text-yellow-600 font-bold">Asistente</NavLink>
+            <NavLink to="/menu" className="text-2xl text-white hover:text-darkyellow font-bold">Menú</NavLink>
+            <NavLink to="/profile" className="text-2xl text-white hover:text-darkyellow font-bold">Perfil</NavLink>
+            <NavLink to="/Product" className="text-2xl text-white hover:text-darkyellow font-bold">Producto</NavLink>
+            <NavLink to="/Help" className="text-2xl text-white hover:text-darkyellow font-bold">Ayuda</NavLink>
             <button
-              className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-500 mt-4 text-xl font-bold"
+              className="bg-darkyellow text-white px-4 py-2 rounded hover:bg-lightyellow mt-4 text-xl font-bold"
               onClick={handleLoginClick}
             >
               Regresar
@@ -49,7 +52,7 @@ export const Profile = () => {
             <EditableField label="Nombre:" value={name} onChange={(e) => setName(e.target.value)} />
             <EditableField label="Correo:" value={email} onChange={(e) => setEmail(e.target.value)} />
             <EditableField label="Teléfono:" value={phone} onChange={(e) => setPhone(e.target.value)} />
-            <button className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-500 mt-8 text-lg md:text-xl font-bold">Guardar</button>
+            <button className="bg-darkyellow text-white px-4 py-2 rounded hover:bg-lightyellow mt-8 text-lg md:text-xl font-bold">Guardar</button>
           </div>
         </div>
       </div>
