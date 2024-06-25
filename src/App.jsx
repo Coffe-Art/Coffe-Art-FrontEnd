@@ -8,6 +8,7 @@ import { Menu } from './components/Layouts/Menu';
 import { Profile } from './components/Layouts/Profile';
 import { Product } from './components/Layouts/Product';
 import { Help } from './components/Layouts/Help';
+import { Craft } from './components/Layouts/Craft';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/Help" element={<Help/>} />
+        <Route path="/Craft" element={<Craft/>} />
       </Routes>
     </Router>
   );

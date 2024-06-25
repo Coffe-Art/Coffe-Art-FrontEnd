@@ -16,30 +16,32 @@ export const Header = () => {
 
   return (
     <header 
-      className="bg-white shadow p-4 flex justify-between items-center" style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="flex items-center mx-8">
-            <a href="#" onClick={handleLogoClick}>
-                <img src={Logo} alt="Logo" className="h-24 w-24" />
-            </a>
-        </div>
-        <nav className="flex space-x-4">
-            <NavLink to="/Menu" className="text-white text-lg font-semibold hover:text-blackyellow" activeClassName="font-bold">Menú</NavLink>
-            <NavLink to="/historias" className="text-white text-lg font-semibold hover:text-blackyellow" activeClassName="font-bold">Historias</NavLink>
-            <NavLink to="/eventos" className="text-white text-lg font-semibold hover:text-blackyellow" activeClassName="font-bold">Eventos</NavLink>
-            <NavLink to="/artesanias" className="text-white text-lg font-semibold hover:text-blackyellow" activeClassName="font-bold">Artesanías</NavLink>
-            <NavLink to="/cursos" className="text-white text-lg font-semibold hover:text-blackyellow" activeClassName="font-bold">Cursos</NavLink>
-        </nav>
+      className="header bg-white shadow p-4 flex flex-col md:flex-row md:justify-between md:items-center" 
+      style={{ 
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+      <div className="logo-container flex items-center justify-center mx-4 md:mx-8">
+        <a href="/#" onClick={handleLogoClick}>
+          <img src={Logo} alt="Logo" className="logo h-16 md:h-24 w-16 md:w-24" />
+        </a>
+      </div>
+      <nav className="nav-links flex flex-col md:flex-row md:flex-grow md:justify-center md:space-x-4 mt-4 md:mt-0">
+        <NavLink to="/Menu" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Menú</NavLink>
+        <NavLink to="/historias" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Historias</NavLink>
+        <NavLink to="/eventos" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Eventos</NavLink>
+        <NavLink to="/Craft" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Artesanías</NavLink>
+        <NavLink to="/cursos" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Cursos</NavLink>
+      </nav>
+      <div className="flex justify-center md:justify-end">
         <button
-          className="bg-darkpurple text-white px-4 py-2 rounded hover:bg-lightpurple mx-8 font-mplus"
+          className="login-button bg-darkpurple text-white px-4 py-2 rounded hover:bg-lightpurple mx-4 md:mx-8 mt-4 md:mt-0"
           onClick={handleLoginClick}
         >
           Iniciar Sesión
         </button>
+      </div>
     </header>
   );
 };
-
-
-
-
-
