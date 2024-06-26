@@ -28,11 +28,11 @@ export const Header = () => {
         </a>
       </div>
       <nav className="nav-links flex flex-col md:flex-row md:flex-grow md:justify-center md:space-x-4 mt-4 md:mt-0">
-        <NavLink to="/Menu" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Menú</NavLink>
-        <NavLink to="/historias" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Historias</NavLink>
-        <NavLink to="/eventos" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Eventos</NavLink>
-        <NavLink to="/Craft" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Artesanías</NavLink>
-        <NavLink to="/cursos" className="nav-link text-white text-lg font-semibold hover:text-black mb-2 md:mb-0" activeClassName="font-bold">Cursos</NavLink>
+        <NavLink to="/Menu" className="nav-link text-white text-lg font-semibold hover:text-darkyellow mb-2 md:mb-0" activeClassName="font-bold">Menú</NavLink>
+        <NavLink to="/History" className="nav-link text-white text-lg font-semibold hover:text-darkyellow mb-2 md:mb-0" activeClassName="font-bold">Historias</NavLink>
+        <NavLink to="/eventos" className="nav-link text-white text-lg font-semibold hover:text-darkyellow mb-2 md:mb-0" activeClassName="font-bold">Eventos</NavLink>
+        <NavLink to="/Craft" className="nav-link text-white text-lg font-semibold hover:text-darkyellow mb-2 md:mb-0" activeClassName="font-bold">Artesanías</NavLink>
+        <NavLink to="/cursos" className="nav-link text-white text-lg font-semibold hover:text-darkyellow mb-2 md:mb-0" activeClassName="font-bold">Cursos</NavLink>
       </nav>
       <div className="flex justify-center md:justify-end">
         <button

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './Pages/Home/Home';
 import { Login } from './components/Login';
@@ -9,8 +9,12 @@ import { Profile } from './components/Layouts/Profile';
 import { Product } from './components/Layouts/Product';
 import { Help } from './components/Layouts/Help';
 import { Craft } from './components/Layouts/Craft';
+import { Cart } from './components/Layouts/Cart';
+import { History } from './components/Layouts/History';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   return (
     <Router>
       <Routes>
@@ -21,13 +25,16 @@ function App() {
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Product" element={<Product />} />
-        <Route path="/Help" element={<Help/>} />
-        <Route path="/Craft" element={<Craft/>} />
+        <Route path="/Help" element={<Help />} />
+        <Route path="/Craft" element={<Craft cart={cart} setCart={setCart} />} />
+        <Route path="/Cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/History" element={<History />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
 
 

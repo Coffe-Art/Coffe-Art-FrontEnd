@@ -9,9 +9,8 @@ import imageEarring from '../../assets/AretesArtesanales.jpg';
 import imageRuana from '../../assets/RuanaArtesanal.jpg';
 import imageBracelet from '../../assets/PulserasArtesanales.jpg';
 import imageBag from '../../assets/BolsoArtesanal.jpg';
-import './Main.css';
 
-export const Main = () => {
+export const History = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [price, setPrice] = useState(500);
     const [rating, setRating] = useState(1);
@@ -52,22 +51,19 @@ export const Main = () => {
                     <img src={Header} alt="HeaderMain" className="block mx-auto w-90 h-auto" />
                 </div>
                 <div className="w-1/2 flex flex-col justify-center items-center">
-                    <h1 className="text-4xl font-bold mb-4 text-center">COFFE ART</h1>
-                    <p className="text-lg text-center px-4 py-2 md:px-8 md:py-4 max-w-xl">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce suscipit, nisi ac tristique
-                        placerat, dui justo rutrum turpis, id lacinia felis nisi ac tellus. Sed ultricies euismod dui,
-                        eget ultricies felis. Duis in augue non augue viverra tincidunt non a est. Curabitur quis augue
-                        ac odio semper accumsan vel at enim.
+                    <h1 className="text-4xl font-bold mb-4 text-center text-darkpurple">COFFE ART</h1>
+                    <p className="text-lg text-center px-4 py-2 md:px-8 md:py-4 max-w-xl text-gray-800">
+                        Descubre la magia de nuestras artesanías hechas con amor y tradición.
                     </p>
                 </div>
             </section>
 
             {isFilterOpen && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
-                    <div className="bg-white p-4 rounded shadow-md">
-                        <h2 className="text-xl font-bold mb-4">Filtrar Productos</h2>
+                    <div className="bg-white p-4 rounded shadow-md w-full md:w-1/2 lg:w-1/3">
+                        <h2 className="text-xl font-bold mb-4 text-darkpurple">Filtrar Productos</h2>
                         <div className="mb-4">
-                            <label className="block text-sm font-bold mb-2">Categoría</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-800">Categoría</label>
                             <select className="shadow border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">
                                 <option value="all">Todas</option>
                                 <option value="earrings">Aretes</option>
@@ -77,7 +73,9 @@ export const Main = () => {
                             </select>
                         </div>
                         <div className="mb-4">
-                            <label className="block text-sm font-bold mb-2">Precio: {formatPrice(price)}</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-800">
+                                Precio: {formatPrice(price)}
+                            </label>
                             <input
                                 type="range"
                                 min="500"
@@ -88,7 +86,7 @@ export const Main = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="block text-sm font-bold mb-2">Valoración: {rating} estrella(s)</label>
+                            <label className="block text-sm font-bold mb-2 text-gray-800">Valoración: {rating} estrella(s)</label>
                             <input
                                 type="range"
                                 min="1"
@@ -121,7 +119,7 @@ export const Main = () => {
                 <div className="w-full md:w-3/4 relative text-center justify-center">
                     <Slider {...settings}>
                         {InformationMain.map((item) => (
-                            <div key={item.id} className="m-4 p-4 bg-purple text-center relative">
+                            <div key={item.id} className="m-4 p-4 bg-purple text-center relative rounded-lg shadow-md">
                                 <h2 className="text-darkyellow text-4xl font-bold">{item.title}</h2>
                                 <p className="text-white text-sm m-4">{item.description}</p>
                             </div>
@@ -135,33 +133,30 @@ export const Main = () => {
                 <div className="flex justify-center items-center h-70 px-4">
                     <div className="w-full md:w-3/4 relative p-6">
                         <h1 className="text-black text-4xl font-bold text-center">NOVEDADES</h1>
-                        <p className="text-black text-sm m-4 text-center">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce suscipit, nisi ac tristique
-                            placerat, dui justo rutrum turpis, id lacinia felis nisi ac tellus. Sed ultricies euismod dui,
-                            eget ultricies felis. Duis in augue non augue viverra tincidunt non a est. Curabitur quis augue
-                            ac odio semper accumsan vel at enim.
+                        <p className="text-gray-800 text-lg m-4 text-center">
+                            Descubre nuestras últimas adiciones y sorpresas que tenemos para ti.
                         </p>
                         <h1 className="text-darkyellow text-4xl font-bold text-center m-6">PRODUCTOS MÁS VENDIDOS</h1>
                         <div className="w-full flex flex-wrap justify-center">
                             <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
-                                <img src={imageEarring} alt="imageEarring" className="w-40 h-auto mx-auto" />
-                                <h3 className="text-lg font-bold">Aretes Artesanales</h3>
-                                <p className="text-sm">Descripción de los aretes artesanales...</p>
+                                <img src={imageEarring} alt="imageEarring" className="w-40 h-auto mx-auto rounded-lg shadow-md" />
+                                <h3 className="text-lg font-bold text-gray-800">Aretes Artesanales</h3>
+                                <p className="text-sm text-gray-700">Descubre la belleza de nuestros aretes artesanales...</p>
                             </div>
                             <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
-                                <img src={imageRuana} alt="imageRuana" className="w-40 h-auto mx-auto" />
-                                <h3 className="text-lg font-bold">Ruana Artesanal</h3>
-                                <p className="text-sm">Descripción de la ruana artesanal...</p>
+                                <img src={imageRuana} alt="imageRuana" className="w-40 h-auto mx-auto rounded-lg shadow-md" />
+                                <h3 className="text-lg font-bold text-gray-800">Ruana Artesanal</h3>
+                                <p className="text-sm text-gray-700">Descubre la comodidad de nuestra ruana artesanal...</p>
                             </div>
                             <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
-                                <img src={imageBracelet} alt="imageBracelet" className="w-40 h-auto mx-auto" />
-                                <h3 className="text-lg font-bold">Pulseras Artesanales</h3>
-                                <p className="text-sm">Descripción de las pulseras artesanales...</p>
+                                <img src={imageBracelet} alt="imageBracelet" className="w-40 h-auto mx-auto rounded-lg shadow-md" />
+                                <h3 className="text-lg font-bold text-gray-800">Pulseras Artesanales</h3>
+                                <p className="text-sm text-gray-700">Descubre la elegancia de nuestras pulseras artesanales...</p>
                             </div>
                             <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
-                                <img src={imageBag} alt="imageBag" className="w-40 h-auto mx-auto" />
-                                <h3 className="text-lg font-bold">Bolso Artesanal</h3>
-                                <p className="text-sm">Descripción del bolso artesanal...</p>
+                                <img src={imageBag} alt="imageBag" className="w-40 h-auto mx-auto rounded-lg shadow-md" />
+                                <h3 className="text-lg font-bold text-gray-800">Bolso Artesanal</h3>
+                                <p className="text-sm text-gray-700">Descubre la practicidad de nuestro bolso artesanal...</p>
                             </div>
                         </div>
                     </div>
