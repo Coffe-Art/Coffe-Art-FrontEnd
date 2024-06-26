@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaBars } from 'react-icons/fa';
-import { FaStar } from 'react-icons/fa';
+import { FaBars, FaStar } from 'react-icons/fa';
 import Header from '../../assets/Cabecera.png';
 import { InformationMain } from './InformationMain';
-import imageRigth from '../../assets/HojasMarrones.png';
-import imageLeft from '../../assets/HojasVerdes.png';
 import imageEarring from '../../assets/AretesArtesanales.jpg';
 import imageRuana from '../../assets/RuanaArtesanal.jpg';
 import imageBracelet from '../../assets/PulserasArtesanales.jpg';
@@ -44,9 +41,9 @@ export const Main = () => {
     };
 
     return (
-        <div className="content">
+        <div className="min-h-screen bg-gray-200">
             <section className="flex p-8 bg-gray-200">
-                <div className="bg-gray-200 p-1">
+                <div className="p-1">
                     <button onClick={toggleFilter} className="p-1 rounded mb-2">
                         <FaBars className="text-darkyellow text-2xl" />
                     </button>
@@ -54,14 +51,19 @@ export const Main = () => {
                 <div className="w-1/2">
                     <img src={Header} alt="HeaderMain" className="block mx-auto w-90 h-auto" />
                 </div>
-                <div className="contentText w-1/2 flex flex-col justify-center items-center">
-                    <h1 className="text-4xl font-bold mb-4 justify-center items-center">COFFE ART</h1>
-                    <p className="text-lg text-center px-4 py-2 md:px-8 md:py-4 max-w-xl mx-auto">Es un lugar donde vender tus productos a diferentes turistas o empresas es más fácil que nunca, con sus grandes oportunidades para el mercado actual.</p>
+                <div className="w-1/2 flex flex-col justify-center items-center">
+                    <h1 className="text-4xl font-bold mb-4 text-center">COFFE ART</h1>
+                    <p className="text-lg text-center px-4 py-2 md:px-8 md:py-4 max-w-xl">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce suscipit, nisi ac tristique
+                        placerat, dui justo rutrum turpis, id lacinia felis nisi ac tellus. Sed ultricies euismod dui,
+                        eget ultricies felis. Duis in augue non augue viverra tincidunt non a est. Curabitur quis augue
+                        ac odio semper accumsan vel at enim.
+                    </p>
                 </div>
             </section>
 
             {isFilterOpen && (
-                <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+                <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
                     <div className="bg-white p-4 rounded shadow-md">
                         <h2 className="text-xl font-bold mb-4">Filtrar Productos</h2>
                         <div className="mb-4">
@@ -115,9 +117,8 @@ export const Main = () => {
                 </div>
             )}
 
-            <div className="flex bg-darkpurple justify-between items-center h-64 px-4">
-                <img src={imageLeft} alt="LeftImage" className="w-20 h-auto" />
-                <div className="w-3/4 relative text-center justify-center">
+            <div className="flex bg-darkpurple justify-center items-center h-64 px-4">
+                <div className="w-full md:w-3/4 relative text-center justify-center">
                     <Slider {...settings}>
                         {InformationMain.map((item) => (
                             <div key={item.id} className="m-4 p-4 bg-purple text-center relative">
@@ -127,32 +128,37 @@ export const Main = () => {
                         ))}
                     </Slider>
                 </div>
-                <img src={imageRigth} alt="RightImage" className="w-20 h-auto" />
+    
             </div>
 
             <div className="bg-gray-200">
                 <div className="flex justify-center items-center h-70 px-4">
-                    <div className="w-3/4 relative p-6">
+                    <div className="w-full md:w-3/4 relative p-6">
                         <h1 className="text-black text-4xl font-bold text-center">NOVEDADES</h1>
-                        <p className="text-black text-sm m-4 text-center">Es un lugar donde vender tus productos a diferentes minoristas o empresas es más fácil que nunca, con sus grandes oportunidades para el mercado actual.</p>
+                        <p className="text-black text-sm m-4 text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce suscipit, nisi ac tristique
+                            placerat, dui justo rutrum turpis, id lacinia felis nisi ac tellus. Sed ultricies euismod dui,
+                            eget ultricies felis. Duis in augue non augue viverra tincidunt non a est. Curabitur quis augue
+                            ac odio semper accumsan vel at enim.
+                        </p>
                         <h1 className="text-darkyellow text-4xl font-bold text-center m-6">PRODUCTOS MÁS VENDIDOS</h1>
-                        <div className="w-full flex justify-between items-center">
-                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center">
+                        <div className="w-full flex flex-wrap justify-center">
+                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
                                 <img src={imageEarring} alt="imageEarring" className="w-40 h-auto mx-auto" />
-                                <h3 className="text-lg font-bold justify-center items-center">Aretes Artesanales</h3>
-                                <p className="text-sm justify-center items-center">Descripción de los aretes artesanales...</p>
+                                <h3 className="text-lg font-bold">Aretes Artesanales</h3>
+                                <p className="text-sm">Descripción de los aretes artesanales...</p>
                             </div>
-                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center">
+                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
                                 <img src={imageRuana} alt="imageRuana" className="w-40 h-auto mx-auto" />
                                 <h3 className="text-lg font-bold">Ruana Artesanal</h3>
                                 <p className="text-sm">Descripción de la ruana artesanal...</p>
                             </div>
-                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center">
+                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
                                 <img src={imageBracelet} alt="imageBracelet" className="w-40 h-auto mx-auto" />
                                 <h3 className="text-lg font-bold">Pulseras Artesanales</h3>
                                 <p className="text-sm">Descripción de las pulseras artesanales...</p>
                             </div>
-                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center">
+                            <div className="product-container bg-darkyellow rounded-lg p-4 shadow-md text-center flex flex-col justify-center items-center mx-4 mb-4">
                                 <img src={imageBag} alt="imageBag" className="w-40 h-auto mx-auto" />
                                 <h3 className="text-lg font-bold">Bolso Artesanal</h3>
                                 <p className="text-sm">Descripción del bolso artesanal...</p>

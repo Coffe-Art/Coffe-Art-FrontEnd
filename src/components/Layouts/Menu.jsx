@@ -26,12 +26,12 @@ export const Menu = () => {
             <img src={Logo} alt="Logo" className="h-32 w-32" />
           </a>
           <nav className="flex flex-col items-center space-y-6">
-            <NavLink to="/menu" className="text-2xl text-white hover:text-yellow-600 font-bold">Menú</NavLink>
-            <NavLink to="/profile" className="text-2xl text-white hover:text-yellow-600 font-bold">Perfil</NavLink>
-            <NavLink to="/producto" className="text-2xl text-white hover:text-yellow-600 font-bold">Producto</NavLink>
-            <NavLink to="/asistente" className="text-2xl text-white hover:text-yellow-600 font-bold">Asistente</NavLink>
+            <NavLink to="/menu" className="text-2xl text-white hover:text-darkyellow font-bold">Menú</NavLink>
+            <NavLink to="/profile" className="text-2xl text-white hover:text-darkyellow font-bold">Perfil</NavLink>
+            <NavLink to="/Product" className="text-2xl text-white hover:text-darkyellow font-bold">Producto</NavLink>
+            <NavLink to="/Help" className="text-2xl text-white hover:text-darkyellow font-bold">Ayuda</NavLink>
             <button
-              className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-500 mt-4 text-xl font-bold"
+              className="bg-darkyellow text-white px-4 py-2 rounded hover:bg-lightyellow mt-4 text-xl font-bold"
               onClick={handleLoginClick}
             >
               Regresar
@@ -45,7 +45,7 @@ export const Menu = () => {
             <FaRegUserCircle className="h-20 w-20 text-gray-800 mb-4" />
             <h1 className="text-black text-3xl md:text-4xl font-bold mb-4">¡Bienvenido!</h1>
             <p className="text-gray-800 text-lg mb-6">Gracias por visitar nuestro menú en línea. Inicia sesión para disfrutar de todas las funcionalidades.</p>
-            <NavLink to="/login" className="bg-yellow-600 text-white px-6 py-3 rounded hover:bg-yellow-500 text-lg font-bold">Iniciar sesión</NavLink>
+            <NavLink to="/login" className="bg-darkyellow text-white px-6 py-3 rounded hover:bg-lightyellow text-lg font-bold">Iniciar sesión</NavLink>
           </div>
         </div>
       </div>
