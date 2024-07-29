@@ -73,9 +73,10 @@ export const History = () => {
                             <img src={selectedCompany.image} alt={selectedCompany.name} className="w-32 h-32 rounded-full mb-4 mx-auto" />
                             <p className="text-lg mb-4">{selectedCompany.description}</p>
                             <p className="text-blue-500 hover:underline">
-                                <NavLink to={`/Companies/${selectedCompany.name.replace(/\s+/g, '-').toLowerCase()}`}>
-                                    Ver más detalles sobre esta empresa
-                                </NavLink>
+                            <span className="text-black text-sm">¿Ya tienes una cuenta?</span>
+                    <NavLink to="/Companies" className="text-darkyellow hover:underline text-sm ml-2">
+                        Iniciar sesión
+                    </NavLink>
                             </p>
                             <button onClick={() => setSelectedCompany(null)} className="text-darkyellow text-lg mt-4">
                                 &larr; Back to Person
@@ -124,8 +125,32 @@ export const History = () => {
                         ))}
                     </div>
                 )}
+                <div className="fixed bottom-4 right-4">
+                <div className="relative">
+                    <button
+                        className="bg-darkpurple text-white p-3 rounded-full shadow-md"
+                        onClick={() => navigate('/craft')}
+                    >
+                        <svg
+                            className="h-6 w-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4m.6 8l1.1 5H19m-7-5a2 2 0 100 4 2 2 0 000-4zm-5 2a2 2 0 100 4 2 2 0 000-4z"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <Footer />
         </div>
+        <Footer />
+      </div>
     );
 };
+

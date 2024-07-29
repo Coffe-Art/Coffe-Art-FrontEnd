@@ -92,30 +92,26 @@ export const Craft = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <div className="container mx-auto my-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {products.map(product => (
-            <div key={product.id} className="border rounded-lg overflow-hidden shadow-md">
-              <div className="p-4 flex flex-col items-center"> {/* Añadido flex y centrado verticalmente */}
-                <img src={product.imagen} alt={product.producto} className="object-cover h-48 w-full mb-4" /> {/* Mostrar imagen */}
-                <h3 className="text-lg font-semibold mb-2">{product.producto}</h3>
-                <p><strong>Vendedor:</strong> {product.vendedor}</p>
-                <p className="text-sm text-darkpurple mb-2"><strong>Descripción:</strong> {product.descripcion}</p>
-                <p><strong>Stock:</strong> {product.stock}</p>
-                <p><strong>Precio:</strong> ${product.precio}</p>
-                <button
-                  className="mt-4 bg-darkyellow hover:bg-lightyellow text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  onClick={() => addToCart(product)}
-                  disabled={product.stock === 0}
-                >
-                  {product.stock === 0 ? 'Sin Stock' : 'Agregar al Carrito'}
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="flex flex-col min-h-screen bg-gray-200">
+      <Header />
+      <div className="container mx-auto my-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {products.map(product => (
+          <div key={product.id} className="bg-white border rounded-lg overflow-hidden shadow-md flex flex-col items-center p-4">
+            <img src={product.imagen} alt={product.producto} className="object-cover h-48 w-full mb-4" />
+            <h3 className="text-lg font-semibold mb-2 text-center">{product.producto}</h3>
+            <p className="text-center"><strong>Vendedor:</strong> {product.vendedor}</p>
+            <p className="text-sm text-darkpurple mb-2 text-center"><strong>Descripción:</strong> {product.descripcion}</p>
+            <p className="text-center"><strong>Stock:</strong> {product.stock}</p>
+            <p className="text-center"><strong>Precio:</strong> ${product.precio}</p>
+            <button
+              className="mt-4 bg-darkyellow hover:bg-lightyellow text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={() => addToCart(product)}
+              disabled={product.stock === 0}
+            >
+              {product.stock === 0 ? 'Sin Stock' : 'Agregar al Carrito'}
+            </button>
+          </div>
+        ))}
       </div>
       <Footer />
       <div className="fixed bottom-4 right-4">

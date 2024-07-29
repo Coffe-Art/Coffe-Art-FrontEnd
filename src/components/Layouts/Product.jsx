@@ -46,7 +46,7 @@ export const Product = ({ isAuthenticated, userType }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-white">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-200">
       {/* Panel de Navegación */}
       <div className="md:w-1/4 lg:w-1/6 bg-cover bg-center p-4 text-white flex flex-col items-center justify-center" style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <a href="/#" onClick={handleLogoClick} className="mb-6">
